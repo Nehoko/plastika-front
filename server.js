@@ -25,6 +25,7 @@ app.set('views', path.join(__dirname, 'src/pages'));
 app.set('view engine', 'pug');
 
 
+
 //home route
 app.get('/', (request, response) => {
     response.render('index');
