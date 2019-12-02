@@ -1,4 +1,6 @@
 const express = require('express');
+const stylus = require('stylus');
+const css = stylus('body\n color: blue', ({ whitespace: true }).toString());
 const path = require('path');
 
 //init engine
@@ -6,9 +8,23 @@ const app = express();
 //choose port
 const port = 8080;
 
+//load stylus preprocessor
+app.use(stylus.middleware({
+    src: __dirname + 'src',
+    dest: __dirname + '/public',
+    compile: function (str, path, fn) {
+        stylus(str)
+            .set('filename', path)
+            .set('compress', true)
+            .render(fn);
+    }
+}));
+app.use(express.static(__dirname + '/public'));
+
 //load view engine
 app.set('views', path.join(__dirname, 'src/pages'));
 app.set('view engine', 'pug');
+
 
 //home route
 app.get('/', (request, response) => {
