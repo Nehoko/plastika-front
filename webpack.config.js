@@ -7,5 +7,15 @@ module.exports = {
         filename: "main.js",
         path: path.resolve(__dirname, 'dist')
     },
-    externals: ["fs"]
+    externals: ["fs"],
+    node: {
+        net: 'empty',
+        tls: 'empty',
+        dns: 'empty',
+    },
+    resolve: {
+        alias: {
+            stylus$: 'stylus/lib/stylus',
+        },
+    },
 };

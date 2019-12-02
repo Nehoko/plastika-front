@@ -1,6 +1,5 @@
 const express = require('express');
 const stylus = require('stylus');
-const css = stylus('body\n color: blue', ({ whitespace: true }).toString());
 const path = require('path');
 
 //init engine
@@ -40,3 +39,4 @@ app.use((err, request, response, next) => {
 app.listen(port, function () {
     console.log("server started @ http://localhost:8080");
 });
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
