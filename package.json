@@ -1,0 +1,31 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.7.8",
+    "fs": "0.0.1-security",
+    "grunt": "^1.0.4",
+    "lodash": "^4.17.15",
+    "pug": "^2.0.4",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nehoko/plastika-front.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nehoko/plastika-front/issues"
+  },
+  "homepage": "https://github.com/Nehoko/plastika-front#readme"
+}
