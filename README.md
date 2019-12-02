@@ -1,4 +1,4 @@
-# Front-end part for plastika
+# Front-end part for plastika project
 
 ## Settings
 
