@@ -5,16 +5,28 @@
   "private": true,
   "dependencies": {
     "angular": "^1.7.8",
+    "bootstrap": "^4.4.1",
+    "express": "^4.17.1",
     "fs": "0.0.1-security",
     "grunt": "^1.0.4",
+    "jquery": "^3.4.1",
     "lodash": "^4.17.15",
+    "popper.js": "^1.16.0",
     "pug": "^2.0.4",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt-cli": "^1.3.2",
+    "http-server": "^0.12.0",
+    "pug-cli": "^1.0.0-alpha6"
+  },
   "scripts": {
+    "pug-it": "pug src/pages",
+    "pug-it:w": "pug src/pages -P -w",
+    "start": "node server.js",
     "build": "webpack",
+    "install": "npm install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
