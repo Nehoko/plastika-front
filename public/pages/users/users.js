@@ -2,9 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/users', function(req, res, next) {
-  router.render('users');
-  // res.status(500).send('Test 500 error');
+router.get('/', function(req, res, next) {
+  res.render('./users/users', {});
 });
 
 module.exports = router;
