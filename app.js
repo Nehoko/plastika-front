@@ -8,6 +8,8 @@ var stylus = require('stylus');
 //init express routers
 var indexRouter = require('./public/pages/index');
 var usersRouter = require('./public/pages/users/users');
+var adminRouter = require('./public/pages/admin/admin');
+
 
 //init application
 var app = express();
@@ -26,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //including express routers to the app
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
