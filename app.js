@@ -5,9 +5,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var stylus = require('stylus');
 
+//init express routers
 var indexRouter = require('./public/pages/index');
 var usersRouter = require('./public/pages/users/users');
 
+//init application
 var app = express();
 
 // view engine setup
@@ -21,6 +23,7 @@ app.use(cookieParser());
 app.use(stylus.middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+//including express routers to the app
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
