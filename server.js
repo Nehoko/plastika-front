@@ -21,8 +21,8 @@ app.use(stylus.middleware({
 app.use(express.static(__dirname + '/public'));
 
 //load view engine
-app.set('views', path.join(__dirname, 'src/pages'));
-app.set('view engine', 'pug');
+// app.set('views', path.join(__dirname, 'src/pages'));
+// app.set('view engine', 'pug');
 
 
 

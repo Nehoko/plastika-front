@@ -1,4 +1,7 @@
 const path = require('path');
+const fs = require('file-system');
+const pages_dir = path.resolve(__dirname, './public/pages');
+const pages = fs.readdirSync(pages_dir).filter(filename => filename.endsWith('.pug'));
 
 module.exports = {
     mode: "development",
@@ -27,7 +30,17 @@ module.exports = {
             {
                 test: /\.styl$/,
                 use: ['style-loader', 'stylus-loader']
+            },
+            {
+                test: /\.pug$/,
+                loader: 'pug-loader'
             }
         ]
-    }
+    },
+    target: "node",
+    plugins:
+        pages.map(page => new HtmlWebpackPlugin({
+            template: `${PAGES_DIR}/${page}`,
+            filename: `./${page.replace(/\.pug/,'.html')}`
+        })),
 };
