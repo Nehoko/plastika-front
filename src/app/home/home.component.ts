@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {HeaderComponent} from '../core/header/header.component';
-import {FooterComponent} from '../core/footer/footer.component';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +6,10 @@ import {FooterComponent} from '../core/footer/footer.component';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  isCollapsed = true;
+  toggleCollapsed(): void {
+    this.isCollapsed = !this.isCollapsed;
+  }
   constructor() { }
 
   ngOnInit() {

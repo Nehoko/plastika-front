@@ -1,9 +1,23 @@
-<!doctype html>
-<html lang="en">
 <head>
-  <title>Document</title>
+  <base href="/home">
 </head>
 <body>
-hello, world!
+<div class="container underBar">
+  <div class="col-1 navbar navbar-expand-lg navbar-light navbar-custom">
+    <button class="btn" type="button" aria-controls="underBarMenu" (click)="toggleCollapsed()"
+            [attr.aria-expanded]="!isCollapsed">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <span class="underbarName mr-auto">Все категории</span>
+  </div>
+  <div class="col-2" id="underBarMenu" [collapse]="isCollapsed" [isAnimated]="true">
+    <ul class="list-group ml-auto">
+      <li class="list-group-item" href="#">Категория 1</li>
+      <li class="list-group-item" href="#">Категория 2</li>
+      <li class="list-group-item" href="#">Категория 3</li>
+      <li class="list-group-item" href="#">Категория 4</li>
+      <li class="list-group-item" href="#">Категория 5</li>
+    </ul>
+  </div>
+</div>
 </body>
-</html>
