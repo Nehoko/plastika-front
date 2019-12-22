@@ -1,3 +1,35 @@
-<link rel="import" href="src/app/core/header/header.component.html">
+<app-header></app-header>
+<body>
+  <header>
+    <div class="bg-light collapse" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">Pisi Kaki</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-light bg-light shadow-sm">
+      <div class="container d-flex justify-content-between">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <strong class="navbarName">Plastika</strong>
+        </a>
+        <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse show" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">Магазин</li>
+            <li class="nav-item active">Гарантия и возврат</li>
+            <li class="nav-item active">Контакты</li>
+            <li class="nav-item active">Доставка</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
 <router-outlet></router-outlet>
-<link rel="import" href="src/app/core/footer/footer.component.html">
+</body>
+<app-footer></app-footer>
