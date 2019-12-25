@@ -23,10 +23,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td scope="col" class="product">Product 1</td>
-          <td scope="col" class="product">Product 2</td>
-          <td scope="col" class="product">Product 3</td>
+        <tr *ngFor="let lineNumber of countOfLines">
+          <td scope="col" class="product" *ngFor="let product of selectLineItems(lineNumber)">{{product.name}}</td>
         </tr>
         </tbody>
       </table>
