@@ -3,14 +3,18 @@
 </head>
 <body>
 <div class="container underBar">
-  <div class="col-1 navbar navbar-expand-lg navbar-light navbar-custom">
-    <button class="btn" type="button" aria-controls="underBarMenu" (click)="toggleCollapsed()"
-            [attr.aria-expanded]="!isCollapsed">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <span class="underbarName mr-auto">Все категории</span>
+  <div class="row">
+    <div class="col-1 navbar navbar-expand-lg navbar-light navbar-custom">
+      <button class="btn" type="button" aria-controls="underBarMenu" (click)="toggleCollapsed()"
+              [attr.aria-expanded]="!isCollapsed">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="col-sm-1">
+      <span class="underbarName">Все категории</span>
+    </div>
   </div>
-  <div class="col-2" id="underBarMenu" [collapse]="isCollapsed" [isAnimated]="true">
+  <div class="col-md-3" id="underBarMenu" [collapse]="isCollapsed" [isAnimated]="true">
     <ul class="list-group ml-auto">
       <li class="list-group-item" href="#">Категория 1</li>
       <li class="list-group-item" href="#">Категория 2</li>

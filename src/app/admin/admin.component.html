@@ -1,0 +1,29 @@
+<head>
+  <base href="/home">
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-2 bar list-group">
+      <ul>
+        <li class="list-group-item barItem" *ngFor="let barItem of barItems" (click) = chooseBarItem(barItem)>{{barItem}}</li>
+      </ul>
+    </div>
+
+    <div class="col-10">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h3>{{selectedBarItem}}</h3>
+          </div>
+          <div class="row">
+            <div class="col-4 product">Product 1</div>
+            <div class="col-4 product">Product 2</div>
+            <div class="col-4 product">Product 3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
