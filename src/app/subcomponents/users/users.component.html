@@ -1,0 +1,21 @@
+<div class="row" *ngFor="let usersRow of scoreCountOfLines(users); let lineNumber = index"
+     [attr.data-index]=lineNumber>
+  <div class="col border" *ngFor="let user of selectLineItems(lineNumber)">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          {{user.pic}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          {{user.login}}
+        </div>
+        <div class="col text-center">
+          Status: {{user.status}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

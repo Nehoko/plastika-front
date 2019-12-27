@@ -11,6 +11,8 @@ import {FooterComponent} from './core/footer/footer.component';
 import {FormsModule} from '@angular/forms';
 import {CollapseModule} from 'ngx-bootstrap/collapse';
 import {AdminComponent} from './admin/admin.component';
+import { ProductsComponent } from './subcomponents/products/products.component';
+import { UsersComponent } from './subcomponents/users/users.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import {AdminComponent} from './admin/admin.component';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    AdminComponent
+    AdminComponent,
+    ProductsComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

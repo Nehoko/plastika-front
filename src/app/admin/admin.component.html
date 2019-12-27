@@ -2,7 +2,7 @@
   <base href="/home">
 </head>
 <body>
-<div class="container">
+<div class="container-fluid custom-container">
   <div class="row">
     <div class="col-2 bar list-group">
       <ul>
@@ -12,22 +12,17 @@
     </div>
 
     <div class="col-10">
-      <table class="container-fluid table table-bordered">
-        <thead class="thead-light">
-        <tr>
-          <th colspan="3">
-            <div class="text-center">
-              <h3>{{selectedBarItem}}</h3>
-            </div>
-          </th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let object of scoreCountOfLines(selectedArray)">
-          <td scope="col" class="product" *ngFor="let product of selectLineItems(lineNumber)">{{product.name}}</td>
-        </tr>
-        </tbody>
-      </table>
+      <div class="container">
+        <div class="row">
+          <div class="col text-center navbar-brand"> {{selectedBarItem}}</div>
+        </div>
+        <div *ngIf="isProductsSelected">
+          <app-products></app-products>
+        </div>
+        <div *ngIf="isUsersSelected">
+          <app-users></app-users>
+        </div>
+      </div>
     </div>
   </div>
 </div>
