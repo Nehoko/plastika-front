@@ -11,11 +11,11 @@
       </ul>
     </div>
 
-    <td class="col-10">
+    <div class="col-10">
       <table class="container-fluid table table-bordered">
         <thead class="thead-light">
         <tr>
-          <th colspan = "3">
+          <th colspan="3">
             <div class="text-center">
               <h3>{{selectedBarItem}}</h3>
             </div>
@@ -23,11 +23,12 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let lineNumber of countOfLines">
+        <tr *ngFor="let object of scoreCountOfLines(selectedArray)">
           <td scope="col" class="product" *ngFor="let product of selectLineItems(lineNumber)">{{product.name}}</td>
         </tr>
         </tbody>
       </table>
+    </div>
   </div>
 </div>
 </body>

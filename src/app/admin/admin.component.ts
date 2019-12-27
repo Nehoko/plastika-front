@@ -9,9 +9,11 @@ import {User} from '../core/classes/user/user';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   selectedBarItem: string;
+  selectedArray: object[];
   barItems: string[];
   products: Product[];
   users: User[];
@@ -36,7 +38,9 @@ export class AdminComponent implements OnInit {
       new User('Dorit', 'https://plastika.org/api/pic/user/dorit', 'active'),
       new User('SexyDrone', 'https://plastika.org/api/pic/user/sexyDrone', 'banned'),
     ];
-    this.countOfLines = this.scoreCountOfLines(this.products.length);
+    const plusOne = this.products.length % 3 > 0 ? 1 : 0;
+    this.countOfLines = this.products.length / 3 + plusOne;
+    this.selectedArray = this.products;
     // this.http.get('api/products.json').subscribe((data: Product[]) => this.products = data);
   }
 
@@ -45,22 +49,26 @@ export class AdminComponent implements OnInit {
 
     switch (barItem) {
       case this.barItems[0]:
-        this.countOfLines = this.products.length / 3;
+        this.selectedArray = this.products;
         break;
       case this.barItems[1]:
-        this.countOfLines = this.users.length / 3;
+        this.selectedArray = this.users;
+        break;
     }
   }
+
   selectLineItems(lineNumber: number) {
     switch (this.selectedBarItem) {
       case this.barItems[0]:
-        return this.products.slice(lineNumber, lineNumber + 3);
+        return this.products.slice(lineNumber * 3, lineNumber * 3 + 2);
         break;
       case this.barItems[1]:
-        return this.users.slice(lineNumber, lineNumber + 3);
+        return this.users.slice(lineNumber * 3, lineNumber * 3 + 2);
     }
   }
-  scoreCountOfLines(length: number) {
-    return length / 3;
+
+  scoreCountOfLines(array: object[]) {
+    const plusOne = array.length % 3 > 0 ? 1 : 0;
+    return array.slice(0, array.length / 3 + plusOne);
   }
 }
