@@ -1,6 +1,6 @@
 <div class="row" *ngFor="let productsRow of scoreCountOfLines(products); let lineNumber = index"
      [attr.data-index]=lineNumber>
-  <div class="col border" *ngFor="let product of selectLineItems(lineNumber)">
+  <div class="col-lg-4 border table-item" *ngFor="let product of selectLineItems(lineNumber)">
     <div class="container container">
       <div class="row">
         <div class="col text-center">

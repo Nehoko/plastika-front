@@ -27,12 +27,19 @@ export class AdminComponent implements OnInit {
     ];
     this.isProductsSelected = true;
     this.isUsersSelected = false;
+    this.selectedBarItem = this.barItems[0];
     // this.http.get('api/products.json').subscribe((data: Product[]) => this.products = data);
   }
 
   chooseBarItem(barItem: string) {
     this.selectedBarItem = barItem;
-    this.isUsersSelected = !this.isUsersSelected;
-    this.isProductsSelected = !this.isProductsSelected;
+    if (this.selectedBarItem === this.barItems[0]) {
+      this.isProductsSelected = true;
+      this.isUsersSelected = false;
+    }
+    if (this.selectedBarItem === this.barItems[1]) {
+      this.isProductsSelected = false;
+      this.isUsersSelected = true;
+    }
   }
 }
